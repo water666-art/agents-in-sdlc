@@ -20,7 +20,7 @@ lastUpdated: 2026-09-28
 다음 프롬프트를 보냅니다.
 
 ```plaintext
-Review the space quiz and create three focused GitHub issues with clear titles, user-focused descriptions, and acceptance criteria. Do not implement them yet.
+Space Quiz를 검토하고 구체적인 GitHub 이슈 세 개를 만듭니다. 각 이슈에 명확한 제목, 사용자 중심 설명, 수락 기준을 작성합니다. 아직 구현하지 마세요.
 ```
 
 ## 현재 세션에서 첫 번째 이슈 작업하기

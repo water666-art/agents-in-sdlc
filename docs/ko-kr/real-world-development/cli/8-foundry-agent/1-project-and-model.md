@@ -91,7 +91,7 @@ Azure를 사용해 Backer Concierge를 호스팅하고 Copilot CLI로 작업을 
 1. Copilot CLI로 돌아가 다음을 입력합니다.
 
     ```text
-    Install the project dependencies, seed the database, then run the existing db:export script. Show me the command output and summarize the shape and grounding limits of db/catalog.json.
+    프로젝트 종속성을 설치하고 데이터베이스에 시드 데이터를 추가한 다음 기존 db:export 스크립트를 실행해 주세요. 명령 출력을 보여 주고 db/catalog.json의 구조와 그라운딩 범위를 요약합니다.
     ```
 
     Copilot은 다음에 해당하는 명령을 실행해야 합니다.
@@ -113,7 +113,7 @@ Copilot이 Azure 리소스를 만들거나 에이전트 코드를 추가하기 �
 1. 다음 프롬프트를 입력합니다.
 
     ```text
-    /plan Use the Microsoft Foundry Skill to plan a Backer Concierge hosted agent for this existing Tailspin Toys repository. Use a public Foundry project, Python 3.13, Microsoft Agent Framework, the Responses API, the Basic sample, and code deployment. Keep the agent in agent/backer-concierge and keep one azure.yaml at the repository root. Ground every answer in db/catalog.json, preserve conversation context, and add focused tests. Include project setup, model selection, local testing, deployment, remote invocation, estimated cost-bearing resources and cleanup.
+    /plan Microsoft Foundry 스킬을 사용해 기존 Tailspin Toys 리포지토리용 Backer Concierge 호스팅 에이전트 계획을 세워 주세요. 공개 Foundry 프로젝트, Python 3.13, Microsoft Agent Framework, Responses API, Basic 샘플, 코드 배포를 사용합니다. 에이전트는 `agent/backer-concierge`에 두고 루트에는 `azure.yaml` 하나만 둡니다. 모든 답변의 근거는 `db/catalog.json`으로 한정하고, 대화 컨텍스트를 유지하며, 범위를 한정한 테스트를 추가합니다. 프로젝트 설정, 모델 선택, 로컬 테스트, 배포, 원격 호출, 비용이 발생하는 리소스의 예상 비용과 정리 방법을 포함합니다.
     ```
 
 2. 제안된 계획을 검토합니다. Copilot이 `microsoft-foundry` 스킬을 사용하려는지, 호스트된 에이전트를 기존 Astro 애플리케이션과 분리하는지 확인합니다. 우려되거나 예상과 다른 부분이 있으면 진행하기 전에 수정을 요청합니다.
@@ -126,7 +126,7 @@ Copilot이 Azure 리소스를 만들거나 에이전트 코드를 추가하기 �
 1. Copilot에 프로젝트 생성을 요청합니다. 리소스 생성을 승인하기 전에 선택한 구독, 지역, 할당량, 예상 비용을 확인합니다.
 
     ```text
-    Use the Microsoft Foundry Skill to create a public Foundry project for this project. Use the resource group rg-tailspin-toys and project name tailspin-toys.
+    Microsoft Foundry 스킬을 사용해 이 프로젝트를 위한 공개 Foundry 프로젝트를 만들어 주세요. rg-tailspin-toys 리소스 그룹과 tailspin-toys 프로젝트 이름을 사용합니다.
     ```
 
     ![공개 Foundry 프로젝트 생성하기](../../../../_images/cli-8-create-foundry-project.png)
@@ -134,7 +134,7 @@ Copilot이 Azure 리소스를 만들거나 에이전트 코드를 추가하기 �
 2. 프로젝트가 준비되면 Copilot에 모델 추천을 요청합니다.
 
     ```text
-    Use the Microsoft Foundry Skill to recommend two or three current chat models available in the tailspin-toys project for the Backer Concierge acceptance criteria in the issue titled "Add a Backer Concierge assistant for catalog questions". Prioritize low latency, instruction following, grounding fidelity, available quota, and models that aren't approaching retirement. There is no complex math or multi-step planning. Explain the tradeoffs and wait for me to choose a model from the recommended options.
+    Microsoft Foundry 스킬을 사용해 "Add a Backer Concierge assistant for catalog questions" 이슈의 Backer Concierge 수락 기준에 맞는 최신 채팅 모델 중 tailspin-toys 프로젝트에서 사용할 수 있는 모델 2~3개를 추천해 주세요. 짧은 지연 시간, 지침 준수, 그라운딩 정확도, 사용 가능한 할당량, 사용 중단 시기가 임박하지 않은 모델을 우선합니다. 복잡한 수학이나 여러 단계의 계획은 필요하지 않습니다. 장단점을 설명하고 추천 옵션 중에서 제가 모델을 선택할 때까지 기다립니다.
     ```
 
     Copilot이 추천 옵션 중에서 모델을 선택하도록 요청할 수 있습니다.
@@ -146,7 +146,7 @@ Copilot이 Azure 리소스를 만들거나 에이전트 코드를 추가하기 �
 3. 추천 옵션 중에서 모델을 선택한 뒤 Copilot에 선택한 모델의 배포를 요청합니다. 배포를 승인하기 전에 용량과 비용을 검토합니다.
 
     ```text
-    Deploy the model we selected to the tailspin-toys Foundry project and use the model name as the deployment name. Choose an SKU with available quota, ask me to confirm the capacity before deployment. After deployment, show me the deployment status.
+    선택한 모델을 tailspin-toys Foundry 프로젝트에 배포하고 모델 이름을 배포 이름으로 사용해 주세요. 사용 가능한 할당량이 있는 SKU를 선택하고, 배포 전에 용량을 확인받습니다. 배포 후 상태를 보여 주세요.
     ```
 
     ![선택한 모델 배포하기](../../../../_images/cli-8-deploy-foundry-model.png)
@@ -195,7 +195,7 @@ Copilot이 Azure 리소스를 만들거나 에이전트 코드를 추가하기 �
 4. Copilot CLI로 돌아가 다음을 입력합니다.
 
     ```text
-    Use the Microsoft Foundry Skill to test my deployed model directly in the tailspin-toys project without creating an agent. Ground it with content from @db/catalog.json and ask: "I love puzzle games about tracking down bugs. What should I back, and how much funding has it raised?" Show me the response and useful metadata like tokens used and response time (only if you can obtain it). Do not change files or create resources.
+    Microsoft Foundry 스킬을 사용해 에이전트를 만들지 않고 tailspin-toys 프로젝트에 배포한 모델을 직접 테스트해 주세요. @db/catalog.json의 콘텐츠를 근거로 "버그를 추적하는 퍼즐 게임을 좋아합니다. 어떤 게임을 후원해야 하며, 지금까지 얼마를 모금했나요?"라고 질문합니다. 응답과 사용한 토큰 수, 응답 시간 등의 유용한 메타데이터를 확인할 수 있는 경우에만 표시합니다. 파일을 변경하거나 리소스를 만들지 마세요.
     ```
 
     ![실제 카탈로그 게임을 추천하고 모금 데이터가 없다고 안내하는 Foundry 모델 응답](../../../../_images/cli-8-foundry-agent-response.png)

@@ -20,7 +20,7 @@ lastUpdated: 2026-09-28
 `space-quiz` 세션에서 다음 프롬프트를 보냅니다.
 
 ```plaintext
-Create a space exploration quiz with 10 questions, a progress bar, score counter, and colorful animated feedback (green for correct, red shake for wrong). Show a results screen with emoji reaction at the end. Center in a narrow column. Single index.html, no server/dependencies. Polished, sans-serif, 14–16px body, prefers-color-scheme. Open in the integrated browser.
+우주 탐험 퀴즈를 만들어 주세요. 질문 10개, 진행률 표시줄, 점수 카운터를 추가하고, 정답에는 초록색으로, 오답에는 빨간색 흔들림 효과로 다채로운 애니메이션 피드백을 표시합니다. 마지막에는 이모지 반응이 포함된 결과 화면을 보여 주세요. 좁은 열에 가운데 정렬하고, 단일 index.html 파일만 사용하며 서버나 종속성은 추가하지 않습니다. 세련된 산세리프 글꼴과 본문 글꼴 크기 14~16px을 사용하고 prefers-color-scheme을 따릅니다. 통합 브라우저에서 엽니다.
 ```
 
 에이전트가 작업을 마치면 여러 문제를 풀어 보고 다음 사항을 확인합니다.
@@ -42,7 +42,7 @@ Create a space exploration quiz with 10 questions, a progress bar, score counter
 3. 다음 프롬프트를 보냅니다.
 
    ```plaintext
-   Make the selected element feel more like a mission-control display. Keep it accessible and preserve the existing light and dark themes.
+   선택한 요소를 관제 센터 화면처럼 보이게 바꿔 주세요. 접근성을 유지하고 기존의 밝은 테마와 어두운 테마를 그대로 보존합니다.
    ```
 
 4. 통합 브라우저가 새로 고쳐지는 모습을 보고 변경 사항을 확인합니다.

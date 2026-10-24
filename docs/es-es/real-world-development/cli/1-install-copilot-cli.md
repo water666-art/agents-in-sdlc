@@ -86,7 +86,7 @@ Ahora que estás en el prompt de Copilot CLI por primera vez, vamos a marcar com
 3. Haz a Copilot una pregunta sencilla para verificar que funciona:
 
    ```
-   What files are in this project?
+   ¿Qué archivos hay en este proyecto?
    ```
 
 4. Copilot debería explorar el repositorio y ofrecer un resumen de la estructura del proyecto.
@@ -120,7 +120,7 @@ Ahora que Copilot CLI está instalado, vamos a darle a Copilot algo de contexto 
 - [Usar Copilot CLI][using-copilot-cli]
 
 [previous-lesson]: ../0-prerequisites/
-[next-lesson]: ../2-custom-instructions/
+[next-lesson]: ../2-add-star-rating/
 [install-copilot-cli]: https://docs.github.com/copilot/how-tos/set-up/install-copilot-cli
 [install-npm]: https://docs.github.com/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli#installing-with-npm-all-platforms
 [install-winget]: https://docs.github.com/copilot/how-tos/copilot-cli/set-up-copilot-cli/install-copilot-cli#installing-with-winget-windows

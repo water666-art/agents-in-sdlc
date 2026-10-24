@@ -39,14 +39,14 @@ Un proxy local de Azure Functions en `/api` almacena los datos de conexión y re
 1. Pide a Copilot que cree el proxy:
 
    ```text
-   Add a local Azure Functions proxy in api for the static Astro site to call my deployed Backer Concierge securely during development. Use my existing local Azure sign-in to call the hosted agent, keep all credentials out of the browser, protect conversation state with opaque handles, validate requests, sanitize errors, add focused tests, and configure the Astro dev server so /api requests reach the local Function. Don't create public deployment infrastructure.
+   Añade un proxy local de Azure Functions en `api` para que el sitio estático de Astro pueda llamar de forma segura a mi Backer Concierge implementado durante el desarrollo. Utiliza mi sesión local de Azure para llamar al agente hospedado, mantén todas las credenciales fuera del navegador, protege el estado de la conversación con identificadores opacos, valida las solicitudes, sanea los errores, añade pruebas específicas y configura el servidor de desarrollo de Astro para que las solicitudes a `/api` lleguen a la Function local. No crees infraestructura pública para la implementación.
    ```
 
 2. Revisa los cambios antes de aceptarlos. Confirma que las credenciales y los identificadores de conversación de Foundry permanecen en el servidor, que los ajustes locales se excluyen del control de versiones, que las solicitudes tienen límites y que las pruebas específicas pasan.
 3. Demuestra que el backend funciona antes de crear la interfaz:
 
    ```text
-   Start the local Functions host and test /api/concierge by asking "Which games are under $30?" Show me the sanitized response and confirm that no credentials or internal conversation identifiers are returned.
+   Inicia el host local de Functions y prueba `/api/concierge` con la pregunta «¿Qué juegos cuestan menos de 30 $?». Muéstrame la respuesta saneada y confirma que no se devuelven credenciales ni identificadores internos de conversación.
    ```
 
 4. Comprueba la respuesta del terminal. Debes obtener JSON válido con una propiedad `response` que contenga la respuesta, sin información de precios inventada, credenciales ni identificadores de conversación internos. Si alguna comprobación falla, pide a Copilot que la corrija y repite la prueba del backend.
@@ -59,7 +59,7 @@ La interfaz ya tiene un backend verificado. Las pruebas de extremo a extremo com
 1. Pide a Copilot que añada el widget:
 
    ```text
-   Add an accessible Backer Concierge chat widget to the Astro site. Connect it to /api/concierge, preserve the conversation using the returned opaque handle, follow the existing design guidance, support keyboard use, and make it testable.
+   Añade al sitio Astro un widget de chat accesible de Backer Concierge. Conéctalo a `/api/concierge`, conserva la conversación mediante el identificador opaco devuelto, sigue las directrices de diseño existentes, permite usarlo con el teclado y asegúrate de que se pueda probar.
    ```
 
    ![Captura de pantalla que muestra el widget de chat Backer Concierge en funcionamiento](../../../../_images/tailspin-toys-backer-concierge-agent.png)
@@ -67,7 +67,7 @@ La interfaz ya tiene un backend verificado. Las pruebas de extremo a extremo com
 2. Mantén la función y el sitio en ejecución y, a continuación, verifica la experiencia completa:
 
    ```text
-   Use Playwright MCP to test the Backer Concierge widget end to end. Verify the core chat flow, conversation continuity, keyboard and accessibility behavior, grounding boundaries, and safe use of the local proxy. Report the results and fix any failures.
+   Utiliza Playwright MCP para probar el widget Backer Concierge de extremo a extremo. Comprueba el flujo básico del chat, la continuidad de la conversación, el uso del teclado y la accesibilidad, los límites de fundamentación y el uso seguro del proxy local. Informa de los resultados y corrige los fallos.
    ```
 
 3. Revisa los resultados de las pruebas y los cambios frente a los criterios de aceptación de la incidencia: respuestas fundamentadas en los datos, ausencia de cifras de financiación inventadas, una pregunta aclaratoria, una interfaz accesible y cobertura de pruebas de extremo a extremo. Confirma que se han corregido los fallos y se han vuelto a ejecutar las comprobaciones afectadas.

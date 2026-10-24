@@ -27,7 +27,7 @@ VS Code muestra el contexto activo en la esquina inferior derecha del cuadro de 
 Utiliza el explorador integrado y un prompt de prueba de humo antes de inicializar un repositorio o crear un commit:
 
 ```plaintext
-Run a browser-level smoke test for the quiz. Check keyboard navigation, score updates, correct and incorrect feedback, and the results screen. Fix any failures, then report what passed.
+Ejecuta una prueba rápida del cuestionario en el navegador. Comprueba la navegación con el teclado, las actualizaciones de puntuación, los comentarios para las respuestas correctas e incorrectas y la pantalla de resultados. Corrige los fallos y, después, informa de las comprobaciones superadas.
 ```
 
 1. Ejecuta la prueba de humo y comprueba el explorador integrado.

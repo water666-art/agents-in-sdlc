@@ -9,29 +9,29 @@ lastUpdated: 2026-09-16
 | [← Opcional: Incorporar Foundry][overview] |
 |:--|
 
-Este primer módulo prepara los datos y el modelo de Backer Concierge con VS Code y Microsoft Foundry Toolkit. Trabaja en tu propio repositorio de Tailspin Toys del taller obligatorio.
+En este primer módulo prepararás los datos y el modelo de Backer Concierge con VS Code y Microsoft Foundry Toolkit. Trabaja en tu propio repositorio de Tailspin Toys, creado durante el taller obligatorio.
 
 ## Objetivos
 
-- Exportar el catálogo e identificar los límites de su información.
-- Preparar un proyecto de Foundry y seleccionar un modelo según los criterios de aceptación y la cuota.
-- Verificar en Model Playground que las respuestas se fundamentan en los datos antes de escribir el código del agente.
+- Exportar el catálogo e identificar los límites de la información disponible.
+- Preparar un proyecto de Foundry y elegir un modelo teniendo en cuenta los criterios de aceptación y la cuota.
+- Comprobar el comportamiento de fundamentación en Model Playground antes de escribir código para el agente.
 
 ## Escenario
 
-Los patrocinadores de Tailspin quieren recomendaciones en las que puedan confiar. Un aficionado a los puzles espera títulos reales y valoraciones precisas, no cifras de financiación inventadas. El asistente necesita unos límites claros del catálogo y la costumbre de hacer una pregunta útil en lugar de adivinar lo que quiere un patrocinador.
+Los patrocinadores de Tailspin quieren recomendaciones fiables. Una persona aficionada a los puzles espera títulos reales y valoraciones exactas, no cifras de financiación inventadas. El concierge necesita un límite claro para el catálogo y debe hacer una pregunta útil en lugar de adivinar lo que quiere la persona.
 
-## Preparar el área de trabajo
+## Prepara el área de trabajo
 
-El kit de herramientas integra en VS Code la exploración de modelos, la implementación, la ingeniería de prompts, la evaluación y la implementación de agentes. El acceso a Azure y una rama de funcionalidad sin cambios pendientes preparan el trabajo que viene a continuación.
+El kit de herramientas reúne en VS Code la búsqueda y la implementación de modelos, la ingeniería de prompts, la evaluación y la implementación de agentes. El acceso a Azure y una rama de funcionalidad limpia te preparan para el trabajo posterior.
 
 > [!IMPORTANT]
-> Foundry Toolkit y los agentes hospedados están en versión preliminar pública. Este módulo crea recursos de Azure facturables. Confirma los permisos de la suscripción, la región, la cuota y el coste estimado antes de aprobar su creación. Puedes [eliminar los recursos][cleanup] aunque pares antes de crear un agente.
+> Foundry Toolkit y los agentes hospedados están en versión preliminar pública. Este módulo crea recursos de Azure facturables. Confirma los permisos de la suscripción, la región, la cuota y el coste estimado antes de aprobar la creación. Puedes [eliminar los recursos][cleanup] aunque te detengas antes de crear un agente.
 
-1. Confirma que tienes acceso a una suscripción de Azure. Las [cuentas gratuitas de Azure con 200 dólares de crédito][azure-free] y [Azure for Students con 100 dólares de crédito][azure-students] son opciones sujetas a sus requisitos de acceso y límites de servicio.
-2. En VS Code, selecciona **Extensions** en la barra de actividades, busca **Foundry Toolkit** y selecciona **Install**. Su icono aparece en la barra de actividades.
-3. Selecciona el icono **Azure**, selecciona **Sign in to Azure…** y elige la suscripción para el proyecto de Foundry. Una vez autenticado el kit de herramientas, Copilot puede utilizar la [habilidad de Microsoft Foundry][foundry-skill] para preparar recursos mediante una conversación.
-4. En el área de trabajo de Tailspin Toys, abre **Terminal** > **New Terminal**, o pulsa <kbd>Control</kbd>+<kbd>\`</kbd> (Mac) o <kbd>Ctrl</kbd>+<kbd>\`</kbd> (Windows/Linux). Confirma que el trabajo anterior está confirmado mediante commits y enviado al repositorio remoto y, a continuación, crea la rama de funcionalidad:
+1. Comprueba que tienes acceso a una suscripción de Azure. Las [cuentas gratuitas de Azure con 200 USD de crédito][azure-free] y [Azure for Students con 100 USD de crédito][azure-students] son opciones, sujetas a sus requisitos y límites de servicio.
+2. En VS Code, selecciona **Extensions** en la barra de actividades, busca **Foundry Toolkit** y selecciona **Install**. El icono aparecerá en la barra de actividades.
+3. Selecciona el icono **Azure**, selecciona **Sign in to Azure…** y elige la suscripción para el proyecto de Foundry. Una vez autenticado el kit de herramientas, Copilot puede utilizar la [habilidad Microsoft Foundry][foundry-skill] para preparar recursos mediante una conversación.
+4. En el área de trabajo de Tailspin Toys, abre **Terminal** > **New Terminal** o pulsa <kbd>Control</kbd>+<kbd>\`</kbd> (Mac) o <kbd>Ctrl</kbd>+<kbd>\`</kbd> (Windows/Linux). Comprueba que el trabajo anterior está confirmado y enviado; después, crea la rama de funcionalidad:
 
    ```bash
    git checkout main
@@ -39,19 +39,19 @@ El kit de herramientas integra en VS Code la exploración de modelos, la impleme
    git checkout -b foundry-agent-vscode
    ```
 
-5. Abre un nuevo chat de Copilot en modo **Agent** y pide:
+5. Abre un chat nuevo de Copilot en modo **Agent** y pregunta:
 
    ```text
-   Show me the open issue about a Backer Concierge assistant and summarize its acceptance criteria.
+   Muéstrame la incidencia abierta sobre un asistente Backer Concierge y resume sus criterios de aceptación.
    ```
 
-6. Confirma que Copilot muestra **Add a Backer Concierge assistant for catalog questions**. Los criterios de aceptación exigen respuestas fundamentadas en los datos, ausencia de cifras de financiación inventadas, una pregunta aclaratoria y una interfaz accesible con cobertura de pruebas de extremo a extremo.
+6. Comprueba que Copilot muestra la incidencia **Add a Backer Concierge assistant for catalog questions**. Los criterios de aceptación exigen respuestas fundamentadas, ninguna cifra de financiación inventada, una pregunta aclaratoria y una interfaz accesible con cobertura de extremo a extremo.
 
-## Generar la exportación del catálogo
+## Genera la exportación del catálogo
 
-El script de exportación del catálogo proporciona la fuente de datos en la que se fundamenta el agente.
+El script de exportación del catálogo proporciona la fuente de datos fundamentada del agente.
 
-1. En el terminal del repositorio de Tailspin Toys, ejecuta la migración, carga los datos iniciales y escribe `db/catalog.json`:
+1. En un terminal del repositorio Tailspin Toys, migra, inicializa los datos y crea `db/catalog.json`:
 
    ```bash
    npm install
@@ -59,50 +59,50 @@ El script de exportación del catálogo proporciona la fuente de datos en la que
    npm run db:export
    ```
 
-2. Abre `db/catalog.json` y confirma que contiene veintiún juegos, cada uno con un título, una descripción, una categoría, una editorial y una valoración por estrellas, además de un campo `note` que describe la información que falta. No hay totales de financiación, recuentos de patrocinadores, niveles de aportación ni fechas de lanzamiento; el agente debe respetar ese límite.
+2. Abre `db/catalog.json` y confirma que contiene veintiún juegos, cada uno con título, descripción, categoría, editorial y valoración por estrellas, además de un campo `note` que describe la información que falta. No incluye importes de financiación, número de patrocinadores, niveles de aportación ni fechas de lanzamiento; el agente debe respetar ese límite.
 
-## Configurar un proyecto de Foundry
+## Configura un proyecto de Foundry
 
-El proyecto contiene el modelo y, más adelante, el agente hospedado. Al retomar este módulo, se utiliza el mismo proyecto en lugar de crear otro.
+El proyecto contiene el modelo y, más adelante, el agente hospedado. Si retomas este módulo, utilizarás el mismo proyecto en lugar de crear otro.
 
-1. Selecciona **Foundry Toolkit** en la barra de actividades, expande **Help and Feedback** y selecciona **Ask Copilot**. Confirma el modelo que prefieras en la lista desplegable y envía el prompt `/foundrytk-quick-start` generado.
+1. Selecciona **Foundry Toolkit** en la barra de actividades, expande **Help and Feedback** y selecciona **Ask Copilot**. Confirma el modelo elegido en el menú desplegable y envía el prompt `/foundrytk-quick-start` generado.
 
    ![Captura de pantalla que muestra la secuencia de inicio rápido de Foundry Toolkit.](../../../../_images/vscode-foundry-setup.png)
 
-2. En el flujo interactivo, responde a **Where are you starting from?** con **Set up Foundry** y, a continuación, a **What do you have already?** con **I have an Azure subscription or Foundry resources**.
-3. Revisa las solicitudes de aprobación de herramientas. Si los comandos propuestos y su alcance son adecuados, selecciona **Allow azmcp …** para esta sesión para reducir las solicitudes de aprobación repetidas.
-4. En **Microsoft Foundry: Create Project**, selecciona **Create new resource group** en **Choose a resource group**, introduce `rg-tailspin-toys`, elige una región que ofrezca el modelo que quieres e introduce `tailspin-toys` en **Enter project name**. `East US 2` y `Sweden Central` son opciones iniciales con una amplia disponibilidad de modelos; la disponibilidad y la cuota actuales determinan la elección real. Si retomas el trabajo, selecciona el proyecto existente.
-5. Espera la notificación de implementación correcta. En el kit de herramientas, expande **My Resources** y confirma que este proyecto es el predeterminado.
+2. En el flujo interactivo, responde **Set up Foundry** a **Where are you starting from?** y, después, **I have an Azure subscription or Foundry resources** a **What do you have already?**.
+3. Revisa las aprobaciones de herramientas. Si los comandos propuestos y su alcance son adecuados, selecciona **Allow azmcp …** para esta sesión y reducir las solicitudes de aprobación repetidas.
+4. En **Microsoft Foundry: Create Project**, selecciona **Create new resource group** en **Choose a resource group**, escribe `rg-tailspin-toys`, elige una región que ofrezca el modelo previsto y escribe `tailspin-toys` en **Enter project name**. `East US 2` y `Sweden Central` son opciones iniciales con amplia disponibilidad de modelos; la disponibilidad actual y la cuota determinarán la elección final. Si retomas el trabajo, selecciona el proyecto que ya existe.
+5. Espera la notificación de que la implementación se ha completado correctamente. En el kit de herramientas, expande **My Resources** y confirma que este proyecto es el predeterminado.
 
-## Explorar e implementar un modelo
+## Busca e implementa un modelo
 
-Aquí importan más el cumplimiento de las reglas y la fundamentación en los datos que elegir el modelo más grande o más reciente. La incidencia aporta criterios concretos para comparar velocidad, fidelidad, disponibilidad regional y cuota.
+En este caso es más importante que el modelo siga las reglas y fundamente sus respuestas que elegir el más grande o el más reciente. La incidencia proporciona criterios concretos para comparar velocidad, fidelidad, disponibilidad regional y cuota.
 
-1. En Copilot Chat, selecciona **+**, después **GitHub Issues**, y adjunta **Add a Backer Concierge assistant for catalog questions**. Envía:
+1. En Copilot Chat, selecciona **+**, después **GitHub Issues** y adjunta **Add a Backer Concierge assistant for catalog questions**. Envía:
 
    ```text
-   /microsoft-foundry recommend a model for the agent described in this issue. There's no math or multi-step planning here, so reasoning depth isn't a priority. Prioritize speed instead. Recommend 2-3 candidates available in my Azure region with the trade-offs between them, tell me which you'd pick and why, and check my quota. Avoid deprecated & older models according to the model retirement schedule
+   /microsoft-foundry Recomienda un modelo para el agente descrito en esta incidencia. No hay cálculos ni planificación en varios pasos, así que la profundidad de razonamiento no es prioritaria. Da prioridad a la velocidad. Recomienda entre dos y tres candidatos disponibles en mi región de Azure, explica sus ventajas e inconvenientes, dime cuál elegirías y por qué, y comprueba mi cuota. Evita los modelos obsoletos o antiguos según el calendario de retirada de modelos.
    ```
 
-2. Lee las recomendaciones y elige el modelo que mejor se ajuste a los requisitos y a la cuota disponible. Pide a Copilot que lo implemente:
+2. Lee las recomendaciones y elige el modelo que mejor se adapte a los requisitos y a la cuota disponible. Pide a Copilot que lo implemente:
 
    ```text
-   /microsoft-foundry Deploy the model I selected to the tailspin-toys project and use the model name as the deployment name. Confirm the available quota and capacity with me before creating it.
+   /microsoft-foundry Implementa el modelo que he seleccionado en el proyecto `tailspin-toys` y utiliza el nombre del modelo como nombre de la implementación. Confirma conmigo la cuota y la capacidad disponibles antes de crearla.
    ```
 
-3. Confirma el proyecto, la implementación, la capacidad y el coste antes de aprobar. Si procede tras revisar el alcance, selecciona **Allow az …** para esta sesión para reducir las solicitudes repetidas.
-4. Selecciona **Foundry Toolkit**, expande **My Resources** y selecciona **Models**. Confirma que el modelo implementado aparece en Foundry. La captura de pantalla es un ejemplo; tu región puede ofrecer un modelo diferente.
+3. Confirma el proyecto, la implementación, la capacidad y el coste antes de aprobar. Si el alcance es adecuado, selecciona **Allow az …** para esta sesión y reducir las solicitudes repetidas.
+4. Selecciona **Foundry Toolkit**, expande **My Resources** y, después, selecciona **Models**. Confirma que el modelo implementado aparece en Foundry. La captura es un ejemplo; tu región puede ofrecer otro modelo.
 
-   ![Captura de pantalla que muestra un ejemplo de implementación de modelo en Foundry Toolkit.](../../../../_images/vscode-model-deployed.png)
+   ![Captura de pantalla que muestra un ejemplo de implementación de un modelo en Foundry Toolkit.](../../../../_images/vscode-model-deployed.png)
 
-## Probar el modelo implementado
+## Prueba el modelo implementado
 
-Model Playground no dispone del archivo del catálogo. Un subconjunto reducido de nueve juegos en el prompt del sistema basta para probar si el modelo cumple las reglas de fundamentación.
+Model Playground no tiene acceso al archivo del catálogo. Un subconjunto reducido de nueve juegos en el prompt del sistema basta para comprobar si el modelo respeta las reglas de fundamentación.
 
-1. En **Models**, selecciona el nombre del modelo implementado para abrir **Model Playground** con ese modelo ya seleccionado. Pega el siguiente prompt del sistema:
+1. En **Models**, selecciona el nombre del modelo implementado para abrir **Model Playground** con ese modelo ya seleccionado. Pega este prompt del sistema:
 
    ```text
-   You're the Backer Concierge for Tailspin Toys. Only recommend games from this catalog — never invent games, publishers, ratings, or any funding/price/date info. If a request is vague, ask one short question first.
+   Eres Backer Concierge de Tailspin Toys. Recomienda únicamente juegos de este catálogo: nunca inventes juegos, editoriales, valoraciones ni datos de financiación, precios o fechas. Si una petición es imprecisa, haz primero una pregunta breve.
 
    CATALOG
 
@@ -119,19 +119,19 @@ Model Playground no dispone del archivo del catálogo. Un subconjunto reducido d
    | Code Quest Odyssey | Adventure | CodeForge Studios | 4.8 |
    ```
 
-2. Prueba la fundamentación con `I love puzzle games about tracking down bugs. What should I back?` Debes obtener títulos reales de la lista con información correcta.
-3. Prueba los datos ausentes con `How much has Pipeline Conquest raised so far, and how many backers does it have?` Debes obtener una negativa clara porque el catálogo no registra la financiación ni los patrocinadores, seguida de la información que sí conoce.
-4. Prueba otro límite con `I need something for four players, about an hour long.` Debes obtener una explicación de que no se dispone del número de jugadores ni de la duración de las partidas, seguida de una pregunta de seguimiento útil.
-5. Prueba la presión para salir del catálogo con `Do you have Wingspan? If not, what's the closest thing you've got?` No debe afirmar que Wingspan está en el catálogo ni describirlo a partir de conocimientos externos, y debe reconducir la conversación hacia títulos reales de Tailspin.
-6. Prueba las peticiones vagas con `Recommend me something good.` Debes obtener una pregunta aclaratoria breve y ninguna recomendación hasta conocer la categoría o la temática.
-7. Prueba la clasificación con `What are your three highest rated games?` Debes obtener Deployment Dynasty y Script Strike con 5.0, seguidos de Code Quest Odyssey con 4.8, en el orden correcto y con las cifras correctas.
-8. Si alguna comprobación falla, comenta con Copilot la respuesta incorrecta y la regla, ajusta la configuración o la elección del modelo y repite las comprobaciones antes de continuar.
+2. Comprueba la fundamentación con `Me encantan los juegos de puzles en los que hay que localizar errores. ¿Cuál debería apoyar?`. Espera títulos reales de la lista con información correcta.
+3. Comprueba la información ausente con `¿Cuánto ha recaudado Pipeline Conquest hasta ahora y cuántos patrocinadores tiene?`. Espera una respuesta clara indicando que el catálogo no contiene datos de financiación ni de patrocinadores, seguida de la información que sí está disponible.
+4. Comprueba otro límite con `Busco algo para cuatro jugadores que dure aproximadamente una hora.`. Espera una explicación de que no hay datos sobre el número de jugadores ni la duración y, después, una pregunta de seguimiento útil.
+5. Comprueba la presión para salir del catálogo con `¿Tenéis Wingspan? Si no, ¿cuál es el juego más parecido?`. Espera que no afirme que Wingspan está en el catálogo, que no aporte una descripción basada en conocimientos externos y que proponga juegos reales de Tailspin.
+6. Comprueba la ambigüedad con `Recomiéndame algo bueno.`. Espera una pregunta breve para aclarar lo que se busca y ninguna recomendación hasta conocer la categoría o el tema.
+7. Comprueba la clasificación con `¿Cuáles son los tres juegos mejor valorados?`. Espera Deployment Dynasty y Script Strike con 5.0, seguidos de Code Quest Odyssey con 4.8, en el orden correcto y con las cifras correctas.
+8. Si alguna comprobación falla, comenta con Copilot la respuesta y la regla que no se ha cumplido, ajusta la configuración o el modelo y repite las comprobaciones antes de continuar.
 
 ## Punto de control al finalizar
 
-Has preparado el área de trabajo de VS Code, exportado el catálogo, creado un proyecto de Foundry y probado un modelo implementado frente a las reglas de fundamentación del Backer Concierge. El punto de control de este módulo es un modelo que recomienda juegos reales del catálogo sin inventar la información que falta; todavía no hay un agente implementado.
+Has preparado el área de trabajo de VS Code, exportado el catálogo, creado un proyecto de Foundry y probado un modelo implementado según las reglas de fundamentación de Backer Concierge. El punto de control de este módulo es un modelo que recomienda juegos reales del catálogo sin inventar información ausente; todavía no es un agente implementado.
 
-A continuación, utilizarás el mismo proyecto `tailspin-toys` y la implementación del modelo seleccionada para crear e implementar el agente. Si paras aquí, [elimina los recursos de Azure][cleanup] para evitar costes continuados.
+A continuación, utilizarás el mismo proyecto `tailspin-toys` y la implementación del modelo seleccionado para crear e implementar el agente. Si te detienes aquí, [elimina los recursos de Azure][cleanup] para evitar costes continuados.
 
 | [Siguiente módulo: Crear e implementar un agente →][next-lesson] |
 |--:|

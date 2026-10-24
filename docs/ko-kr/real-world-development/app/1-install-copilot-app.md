@@ -77,7 +77,7 @@ GitHub Copilot app을 사용하려면 먼저 앱을 설치해야 합니다. Wind
 2. 앱의 세션이 어떻게 작동하는지 질문합니다.
 
    ```plaintext
-   How does the GitHub Copilot app use worktrees?
+   GitHub Copilot app은 워크트리를 어떻게 사용하나요?
    ```
 
 3. 대화 보기에서 응답을 읽습니다. 각 세션이 격리된 git 작업 트리에서 실행되므로 변경 내용이 충돌하지 않게 여러 에이전트를 병렬로 실행할 수 있다는 점을 확인할 수 있습니다. 언제든지 대화를 계속하거나 새 채팅을 시작할 수 있습니다.

@@ -44,7 +44,7 @@ Las habilidades se pueden invocar directamente mediante un comando con barra dia
 2. Utiliza la indicación siguiente para invocar la habilidad:
 
     ```plaintext
-    Run the quality-checks skill for unit tests, lint, and type checks.
+    Ejecuta la habilidad `quality-checks` para realizar las pruebas unitarias y las comprobaciones de lint y tipos.
     ```
 
 3. Observa el informe final.
@@ -58,9 +58,9 @@ Queremos un informe mejor que indique qué se ha ejecutado, si ha tenido éxito 
 3. Añade la siguiente sección al final del archivo:
 
     ```markdown
-    ## Results output formatting
+    ## Formato de los resultados
 
-    Upon completion, report each command that ran and whether it passed, failed, or was blocked. Include test counts, durations, errors, warnings, and other metrics only when the tool reports them. Identify the next action for any failure or blocker, and never describe a skipped or incomplete check as passed.
+    Al terminar, informa de cada comando ejecutado e indica si se ha superado, ha fallado o ha quedado bloqueado. Incluye recuentos de pruebas, duraciones, errores, advertencias y otras métricas solo cuando las proporcione la herramienta. Indica el siguiente paso para cada fallo o bloqueo y no describas nunca como superada una comprobación omitida o incompleta.
     ```
 
 El archivo se guardará automáticamente.
@@ -73,7 +73,7 @@ Una vez realizado el cambio, veamos cómo funciona. Utilizaremos exactamente la 
 2. Utiliza la indicación siguiente para invocar la habilidad:
 
     ```plaintext
-    Run the quality-checks skill for unit tests, lint, and type checks.
+    Ejecuta la habilidad `quality-checks` para realizar las pruebas unitarias y las comprobaciones de lint y tipos.
     ```
 
 3. Observa el informe final.

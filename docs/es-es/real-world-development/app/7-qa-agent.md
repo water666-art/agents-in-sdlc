@@ -32,9 +32,9 @@ Antes de abrir la PR de la funcionalidad, pedirás a Copilot que cree un perfil 
 2. Envía la siguiente indicación a Copilot para crear el nuevo agente personalizado:
 
     ```plaintext
-    Create a custom agent named QA in .github/agents/qa.agent.md. It should check features against their issues and agreed requirements, follow the repository instructions, run the quality-checks skill, use Playwright MCP to verify behavior, and add tests when coverage is missing.
+    Crea un agente personalizado llamado QA en `.github/agents/qa.agent.md`. Debe comprobar las funcionalidades frente a sus incidencias y requisitos acordados, seguir las instrucciones del repositorio, ejecutar la habilidad `quality-checks`, utilizar Playwright MCP para verificar el comportamiento y añadir pruebas si falta cobertura.
 
-    Have it report each requirement as pass, fail, or blocked with supporting evidence. It must ask before changing implementation code, and it must not commit changes or open pull requests. Use the current model and available tools. Just create the profile for now so I can review it.
+    Pídele que informe del resultado de cada requisito como superado, fallido o bloqueado, con las evidencias correspondientes. Debe preguntar antes de cambiar el código de implementación y no debe crear commits ni abrir solicitudes de incorporación de cambios. Utiliza el modelo actual y las herramientas disponibles. Por ahora, crea únicamente el perfil para que pueda revisarlo.
     ```
 
 ## Examinar el perfil
@@ -54,7 +54,7 @@ Después de revisar el perfil, selecciona QA en la sesión actual para que pueda
 3. Envía la indicación siguiente para pedir a QA que revise la funcionalidad:
 
     ```plaintext
-    Review the filtering feature against the issue and the decisions in our plan. Is it ready for a PR?
+    Revisa la funcionalidad de filtrado según la incidencia y las decisiones del plan. ¿Está lista para una PR?
     ```
 
 4. Confirma que QA utiliza la incidencia y las decisiones de planificación correctas. Proporciona la URL de la incidencia o el contexto que falte si lo solicita.

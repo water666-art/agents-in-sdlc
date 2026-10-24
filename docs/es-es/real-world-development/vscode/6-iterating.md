@@ -16,6 +16,7 @@ A lo largo de esta práctica has trabajado con GitHub Copilot en varias tareas c
 ### Escenario
 
 Los fundamentos del diseño de software y DevOps no cambian con la incorporación de la IA generativa. Sigue siendo necesario un ciclo de revisión real de todo lo que produce Copilot. Teniendo esto en cuenta, vamos a enviar los cambios de accesibilidad desde el codespace, abrir una solicitud de incorporación de cambios y examinar las diferencias antes de involucrar al resto del equipo.
+
 ## Publicar las funciones de accesibilidad
 
 Los controles de alto contraste y modo claro que has implementado con el agente personalizado de accesibilidad en el [ejercicio 4][exercise-4] y el [ejercicio 5][exercise-5] están en el codespace como cambios confirmados mediante commits. Vamos a enviarlos a una rama y a abrir una solicitud de incorporación de cambios para que el resto del equipo pueda revisarlos.
@@ -33,7 +34,6 @@ Los controles de alto contraste y modo claro que has implementado con el agente 
    - Los cambios de CSS o de estilos para los modos de alto contraste y claro.
    - Los atributos de accesibilidad (etiquetas ARIA, navegación por teclado, etc.).
    - Cualquier código JavaScript/TypeScript que gestione el cambio de modo.
-
 9. Vuelve a la pestaña **Conversation**.
 10. Si hay flujos de trabajo pendientes de aprobación, selecciona **Approve and run workflows**.
 

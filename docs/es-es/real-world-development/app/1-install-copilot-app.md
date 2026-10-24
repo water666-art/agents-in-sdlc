@@ -77,7 +77,7 @@ Una buena forma de familiarizarse con la aplicación es utilizarla para conocer 
 2. Pregunta a la aplicación cómo funcionan sus sesiones:
 
    ```plaintext
-   How does the GitHub Copilot app use worktrees?
+   ¿Cómo utiliza la aplicación GitHub Copilot los worktrees?
    ```
 
 3. Lee la respuesta en la vista de conversación. Verás que cada sesión se ejecuta en su propio árbol de trabajo de Git aislado, lo que permite ejecutar varios agentes en paralelo sin que sus cambios entren en conflicto. Puedes continuar la conversación o iniciar un chat nuevo en cualquier momento.

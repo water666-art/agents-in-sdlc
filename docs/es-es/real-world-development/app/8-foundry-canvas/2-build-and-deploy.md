@@ -44,7 +44,7 @@ Canvas genera el código, la estructura de carpetas y el archivo `azure.yaml` de
 4. En la versión preliminar de **Create new hosted agents**, introduce:
 
    ```plaintext
-   Scaffold a hosted agent named Backer Concierge in agent/backer-concierge, connected to the tailspin-toys project and the model deployment I just confirmed. Use Microsoft Agent Framework with the Responses API. Ground it in db/catalog.json and ensure it meets the acceptance criteria in this issue. Keep a single azure.yaml at the repository root with the hosted-agent service pointing to agent/backer-concierge. Make sure the deployed agent includes the catalog data it needs, and add focused tests.
+   Crea la estructura inicial de un agente hospedado llamado Backer Concierge en `agent/backer-concierge`, conectado al proyecto `tailspin-toys` y al modelo que acabo de confirmar. Utiliza Microsoft Agent Framework con la API Responses. Fundamenta sus respuestas en `db/catalog.json` y asegúrate de que cumple los criterios de aceptación de esta incidencia. Deja un único `azure.yaml` en la raíz del repositorio, con el servicio del agente hospedado apuntando a `agent/backer-concierge`. Asegúrate de que el agente implementado incluya los datos del catálogo que necesita y añade pruebas específicas.
    ```
 
    Canvas envía a Copilot la indicación y el contexto de la suscripción actual y del proyecto de Foundry. Busca ejemplos de Agent Framework + Responses API; puede aparecer una opción como **Agent with Local Tools (Responses, Agent Framework, Python)**.
@@ -85,7 +85,7 @@ Canvas genera el código, la estructura de carpetas y el archivo `azure.yaml` de
 9. Prueba una **recomendación basada en el catálogo** en Agent Inspector:
 
     ```text
-    I love puzzle games about tracking down bugs. What should I back?
+    Me encantan los juegos de puzles en los que hay que localizar errores. ¿Cuál debería apoyar?
     ```
 
     Resultado esperado: menciona solo títulos reales del catálogo y utiliza la información correcta de cada título.
@@ -95,7 +95,7 @@ Canvas genera el código, la estructura de carpetas y el archivo `azure.yaml` de
 10. Prueba una **pregunta trampa para detectar alucinaciones**:
 
     ```text
-    How much has Pipeline Conquest raised so far, and how many backers does it have?
+    ¿Cuánto ha recaudado Pipeline Conquest hasta ahora y cuántas personas lo apoyan?
     ```
 
     Resultado esperado: explica que el catálogo no registra la financiación ni los patrocinadores y, después, ofrece información que sí está disponible.
@@ -103,7 +103,7 @@ Canvas genera el código, la estructura de carpetas y el archivo `azure.yaml` de
 11. Prueba la **presión para responder sobre juegos ajenos al catálogo**:
 
     ```text
-    Do you have Wingspan? If not, what's the closest thing you've got?
+    ¿Tenéis Wingspan? Si no, ¿cuál es el juego más parecido?
     ```
 
     Resultado esperado: indica que Wingspan no está en el catálogo, no lo describe con conocimientos externos y redirige la respuesta hacia títulos reales de Tailspin.
@@ -111,7 +111,7 @@ Canvas genera el código, la estructura de carpetas y el archivo `azure.yaml` de
 12. Prueba una **petición imprecisa**:
 
     ```text
-    Recommend me something good.
+    Recomiéndame algo bueno.
     ```
 
     Resultado esperado: hace una pregunta breve para aclarar la petición y todavía no recomienda ningún título.
@@ -119,7 +119,7 @@ Canvas genera el código, la estructura de carpetas y el archivo `azure.yaml` de
 13. Prueba la **exactitud de la clasificación**:
 
     ```text
-    What are your three highest rated games?
+    ¿Cuáles son los tres juegos mejor valorados?
     ```
 
     Resultado esperado: devuelve las tres entradas del catálogo mejor valoradas en el orden correcto y con las valoraciones correctas.
@@ -127,11 +127,11 @@ Canvas genera el código, la estructura de carpetas y el archivo `azure.yaml` de
 14. Prueba la **continuidad de la conversación** enviando estas indicaciones en la misma conversación:
 
     ```text
-    Show me two highly rated strategy games.
+    Muéstrame dos juegos de estrategia con buenas valoraciones.
     ```
 
     ```text
-    Which of those has the higher rating?
+    ¿Cuál de esos dos tiene la valoración más alta?
     ```
 
     Resultado esperado: la segunda respuesta se refiere solo a los dos títulos de la primera respuesta y compara correctamente sus valoraciones del catálogo.

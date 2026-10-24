@@ -46,7 +46,7 @@ Tailspin Toys 팀이 단위 테스트, 린트, 타입 검사 실행을 위해 �
 2. 다음 프롬프트로 스킬을 호출합니다.
 
     ```plaintext
-    Run the quality-checks skill for unit tests, lint, and type checks.
+    quality-checks 스킬을 실행해 단위 테스트, 린트, 타입 검사를 수행합니다.
     ```
 
 3. 마지막에 표시되는 보고서를 확인합니다.
@@ -75,7 +75,7 @@ Tailspin Toys 팀이 단위 테스트, 린트, 타입 검사 실행을 위해 �
 2. 다음 프롬프트로 스킬을 호출합니다.
 
     ```plaintext
-    Run the quality-checks skill for unit tests, lint, and type checks.
+    quality-checks 스킬을 실행해 단위 테스트, 린트, 타입 검사를 수행합니다.
     ```
 
 3. 마지막에 표시되는 보고서를 확인합니다.

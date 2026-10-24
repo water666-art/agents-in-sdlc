@@ -19,7 +19,7 @@ En esta lección:
 Envía el siguiente prompt en Copilot Chat:
 
 ```plaintext
-Create a colorful, accessible space exploration quiz with 10 questions in a single index.html. Add a progress bar, score counter, animated correct and incorrect feedback, and a results screen. Use no server or dependencies. Open it in the VS Code integrated browser.
+Crea un cuestionario de exploración espacial colorido y accesible, con 10 preguntas en un único `index.html`. Añade una barra de progreso, un contador de puntuación, señales visuales animadas para las respuestas correctas e incorrectas y una pantalla de resultados. No utilices servidor ni dependencias. Ábrelo en el navegador integrado de VS Code.
 ```
 
 1. Revisa el archivo generado en el editor.
@@ -35,7 +35,7 @@ El explorador integrado puede enviar un elemento concreto directamente al chat, 
 3. Envía el siguiente prompt y observa cómo se vuelve a cargar la vista previa:
 
    ```plaintext
-   Using the selected element, make the answer buttons feel more tactile: add a subtle press state, a clearer focus ring for keyboard users, and a smoother transition into the correct and incorrect colors. Change nothing else.
+   A partir del elemento seleccionado, haz que los botones de respuesta den una sensación más táctil: añade un efecto de pulsación sutil, un contorno de foco más visible para quienes usan el teclado y una transición más fluida a los colores de respuesta correcta e incorrecta. No cambies nada más.
    ```
 
 4. Lee las diferencias en **Source Control** antes de conservar el cambio.

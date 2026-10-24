@@ -3,7 +3,7 @@ title: "Lição 2 - Adicionar avaliações por estrelas: uma melhoria rápida"
 description: "Inicie sua primeira sessão de agente no aplicativo GitHub Copilot, faça uma pequena alteração nos cards dos jogos e integre-a como seu primeiro pull request."
 authors:
   - geektrainer
-lastUpdated: 2026-07-09
+lastUpdated: 2026-10-22
 ---
 
 Na lição anterior, você conheceu o espaço de trabalho e usou um chat rápido. Agora é hora de iniciar uma **sessão de agente** e fazer sua primeira alteração no projeto. A mudança será pequena: os dados dos jogos já têm uma avaliação por estrelas, mas os cards dos jogos na página inicial ainda não a exibem. Você pedirá ao agente que mostre essa avaliação, revisará a alteração e fará o merge dela como seu primeiro pull request.
@@ -47,7 +47,7 @@ O aplicativo Copilot começa criando um novo worktree, uma cópia isolada do pro
 
 Todas as alterações geradas por IA devem ser revisadas antes do merge, mesmo as pequenas. Vamos explorar as alterações diretamente no aplicativo Copilot.
 
-1. No canto superior direito do aplicativo, selecione **Toggle review panel**. A tela de diff será aberta com todas as alterações pendentes feitas pelo Copilot.
+1. No canto superior direito do aplicativo, selecione **Toggle review panel**. No painel que abrir, selecione **Changes** para ver os arquivos alterados e seus diffs.
 
     ![Barra de ferramentas superior do aplicativo GitHub Copilot com uma seta apontando para o botão Toggle review panel à direita de Create PR](../../../_images/app-2-review-panel.png)
 
@@ -97,10 +97,11 @@ Você criou o recurso! Agora é hora de criar um pull request (PR) para fazer o 
 
 1. Selecione **Create PR** no canto superior direito.
 2. Se solicitado, selecione **Sign in with your browser** e siga as instruções para se autenticar.
-3. O Copilot começará a criar o PR.
-4. Selecione o indicador **PR** logo acima do chat para abrir o PR no painel de revisão e visualizá-lo. Faça as revisões necessárias nesse painel.
-5. Quando estiver tudo pronto, selecione **Ready to merge**.
-6. Na nova caixa de diálogo, selecione **Merge pull request** para fazer o merge do pull request.
+3. Se o Copilot explicar que a política do repositório exige uma issue correspondente para criar o PR, confirme que ele deve seguir esse processo.
+4. O Copilot começará a criar o PR.
+5. Selecione o indicador **PR** logo acima do chat para abrir o PR no painel de revisão e visualizá-lo. Faça as revisões necessárias nesse painel.
+6. Quando estiver tudo pronto, selecione **Ready to merge**.
+7. Na nova caixa de diálogo, selecione **Merge pull request** para fazer o merge do pull request.
 
 ## Resumo e próximos passos
 

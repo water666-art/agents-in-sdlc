@@ -21,7 +21,7 @@ lastUpdated: 2026-09-28
 3. 다음 프롬프트를 보내 에이전트가 아무것도 편집하지 않고 조사하게 합니다.
 
    ```plaintext
-   Plan how to implement this issue. Investigate the existing quiz, list the files you would change, call out risks to accessibility and the single-file constraint, and stop before making any edits.
+   이 이슈를 구현할 계획을 세워 주세요. 기존 퀴즈를 살펴보고 변경할 파일을 나열하며, 접근성과 단일 파일 제약에 대한 위험 요소를 짚은 다음 실제 편집을 시작하기 전에 멈춥니다.
    ```
 
 4. 계획을 읽고 빠진 내용은 보완하도록 요청한 다음 승인합니다.

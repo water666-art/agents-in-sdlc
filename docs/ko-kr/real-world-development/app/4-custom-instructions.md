@@ -83,7 +83,7 @@ lastUpdated: 2026-07-09
 1. 다음 프롬프트로 지침 파일을 사용하여 새 요구 사항에 맞게 코드를 업데이트하도록 Copilot에 요청합니다.
 
    ```plaintext
-   We just updated our instructions and code guidance. Can you please update the code you generated to match that guidance?
+   지침과 코드 작성 가이드를 업데이트했습니다. 이 가이드에 맞게 생성한 코드를 수정해 주세요.
    ```
 
 2. 오른쪽 위의 **Changes**를 선택하여 코드 변경 내용을 엽니다.

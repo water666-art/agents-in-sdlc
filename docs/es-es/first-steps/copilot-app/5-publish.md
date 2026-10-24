@@ -19,7 +19,7 @@ En esta lección:
 Envía el siguiente prompt:
 
 ```plaintext
-Initialize this folder as a Git repository, create an initial commit, and create a new public GitHub repository named space-quiz in my account. Push the current branch and set it as the default branch. Refresh the project within this app so the GitHub project is linked.
+Inicializa esta carpeta como repositorio de Git, crea un commit inicial y crea en mi cuenta un repositorio público de GitHub llamado `space-quiz`. Sube la rama actual y establécela como rama predeterminada. Actualiza el proyecto en esta aplicación para vincularlo con el proyecto de GitHub.
 ```
 
 > [!WARNING]

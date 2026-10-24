@@ -21,7 +21,7 @@ Quienes apoyan los juegos de Tailspin Toys pueden explorarlos por categoría y e
 
 Tailspin Toys quiere un **Backer Concierge** que ayude a quienes apoyan sus juegos a descubrir nuevos títulos mediante una conversación. Debe recomendar juegos del catálogo de Tailspin, hacer una pregunta breve para aclarar las preferencias cuando sean vagas y recordar las recomendaciones anteriores cuando se plantee una pregunta de seguimiento.
 
-Quienes apoyan los juegos necesitan respuestas fiables. El concierge debe usar únicamente la información del catálogo e indicar claramente cuándo un dato no está disponible, en lugar de inventar juegos, editoriales, valoraciones, importes totales de financiación, cifras de personas que los apoyan, precios, números de jugadores, duraciones de las partidas o fechas de lanzamiento.
+Los patrocinadores necesitan respuestas fiables. El concierge debe usar únicamente la información del catálogo e indicar claramente cuándo un dato no está disponible, en lugar de inventar juegos, editoriales, valoraciones, importes totales de financiación, números de patrocinadores, precios, números de jugadores, duraciones de las partidas o fechas de lanzamiento.
 
 ## Elige el siguiente paso
 
@@ -74,7 +74,7 @@ Cuando termines de experimentar en cualquiera de los puntos de comprobación, el
 [project-model]: 1-project-and-model/
 [build-deploy]: 2-build-and-deploy/
 [connect-site]: 3-connect-to-site/
-[review]: ../9-review/
+[review]: ../10-review/
 [cleanup]: #elimina-los-recursos
 [azure-skills]: https://github.com/microsoft/azure-skills#github-copilot-cli
 [foundry-skill]: https://learn.microsoft.com/azure/foundry/how-to/develop/use-microsoft-foundry-skill?tabs=copilot-cli

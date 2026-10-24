@@ -3,12 +3,12 @@ slug: pt-br/real-world-development/vscode
 title: "VS Code"
 authors:
   - geektrainer
-lastUpdated: 2026-06-30
+lastUpdated: 2026-09-18
 ---
 
-O **[GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)** no VS Code traz o GitHub Copilot para o editor de código que você já usa. Trabalhando no Visual Studio Code (e no GitHub Codespaces), você conduzirá o Copilot Chat no modo de agente, conectará ferramentas externas por meio do MCP e contará com agentes personalizados — tudo sem sair do IDE, onde o Copilot tem uma visão completa dos arquivos, do terminal e dos problemas.
+O **[GitHub Copilot Chat](https://code.visualstudio.com/docs/copilot/chat/copilot-chat)** no VS Code traz o GitHub Copilot para o editor de código que você já usa. No Visual Studio Code e no GitHub Codespaces, você conduzirá o Copilot Chat no modo de agente, conectará ferramentas externas por meio do MCP e usará agentes personalizados — tudo sem sair do IDE, onde o Copilot tem acesso aos arquivos, ao terminal e aos problemas do projeto.
 
-Você começará adicionando instruções personalizadas e observando o Copilot segui-las; depois, usará o modo de agente para criar uma funcionalidade de filtragem que abrange a interface, a camada de dados e os testes. Em seguida, conectará o servidor MCP do Playwright e deixará o Copilot controlar um navegador para testar a funcionalidade antes de abrir um pull request. Por fim, revisará e usará um agente personalizado para o trabalho de acessibilidade e, então, monitorará, orientará e iterará sobre as alterações do Copilot — tudo sem sair do editor.
+Você começará adicionando instruções personalizadas e verificando se o Copilot as segue. Depois, usará o modo de agente para criar uma funcionalidade de filtragem que abrange a interface, a camada de dados e os testes. Em seguida, conectará o servidor MCP do Playwright e deixará o Copilot controlar um navegador para testar a funcionalidade antes de abrir um pull request. Por fim, revisará e usará um agente personalizado para o trabalho de acessibilidade e monitorará, orientará e iterará sobre as alterações do Copilot — tudo sem sair do editor.
 
 ## Exercícios
 

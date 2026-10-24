@@ -20,7 +20,7 @@ En esta lección:
 Envía el siguiente prompt:
 
 ```plaintext
-Review the space quiz and suggest three focused feature ideas that could each be completed in a short session. Create a separate GitHub issue for each idea with a clear title, user-focused description, and acceptance criteria. Do not implement them yet.
+Revisa el cuestionario espacial y sugiere tres funcionalidades concretas que se puedan completar en una sesión breve. Crea una incidencia de GitHub independiente para cada idea, con un título claro, una descripción centrada en las necesidades de los usuarios y criterios de aceptación. Todavía no las implementes.
 ```
 
 Abre **Issues**, revisa las tres incidencias y elige una que aporte un valor claro y tenga un alcance manejable.
@@ -38,7 +38,7 @@ Abre **Issues**, revisa las tres incidencias y elige una que aporte un valor cla
 5. Envía el siguiente prompt:
 
    ```plaintext
-   Implement this issue completely. Keep the single-file, dependency-free design, test the behavior in the integrated browser, and summarize the changes when finished.
+   Implementa esta incidencia por completo. Mantén el diseño de un único archivo sin dependencias, prueba el comportamiento en el navegador integrado y resume los cambios al terminar.
    ```
 
 El nuevo árbol de trabajo mantiene esta funcionalidad aislada de la rama predeterminada hasta que estés listo para revisarla y combinarla.
